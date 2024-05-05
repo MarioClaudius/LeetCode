@@ -1,4 +1,4 @@
-public class problem5 {
+public class problem0005 {
     public static void main(String[] args) {
         System.out.println(longestPalindrome("babad")); // should print bab / aba
         System.out.println(longestPalindrome("cbbd"));  // should print bb

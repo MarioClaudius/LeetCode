@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class problem4 {
+public class problem0004 {
     public static void main(String[] args) {
         int[] nums1 = new int[]{1, 2};
         int[] nums2 = new int[]{3, 4};

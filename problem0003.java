@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class problem3
+public class problem0003
 {
 	public static void main(String[] args) {
 		System.out.println(lengthOfLongestSubstring("ggububgvfk"));

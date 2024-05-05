@@ -1,4 +1,4 @@
-public class problem9 {
+public class problem0009 {
     public static void main(String[] args) {
         System.out.println(isPalindrome(121));  // should return true
         System.out.println(isPalindrome(-121));   // should return false because -121 != 121-

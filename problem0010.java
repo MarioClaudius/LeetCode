@@ -1,4 +1,4 @@
-public class problem10 {
+public class problem0010 {
     public static void main(String[] args) {
         System.out.println(isMatch("a", "b.."));      // should return true
         System.out.println(isMatch("aabcbcbcaccbcaabc", ".*a*aa*.*b*.c*.*a*"));      // should return true

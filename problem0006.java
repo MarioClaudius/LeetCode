@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class problem6 {
+public class problem0006 {
     public static void main(String[] args) {
         System.out.println(convert("PAYPALISHIRING", 3));   // should return / print PAHNAPLSIIGYIR
         System.out.println(convert("PAYPALISHIRING", 4));   // should return / print PINALSIGYAHRPI

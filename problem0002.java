@@ -1,4 +1,4 @@
-public class problem2 {
+public class problem0002 {
     public static class ListNode {
         int val;
         ListNode next;
