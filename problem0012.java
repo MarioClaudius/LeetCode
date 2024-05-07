@@ -2,14 +2,13 @@ import java.util.*;
 
 public class problem0012 {
     public static void main(String[] args) {
-        ArrayList<Integer> numList = new ArrayList<>();
-        numList.add(1);
-        numList.add(2);
-        numList.remove(0);
-        System.out.println(intToRoman(3749));
+        System.out.println(intToRoman(3749));       // should return MMMDCCXLIX
+        System.out.println(intToRoman(58));         // should return LVIII
+        System.out.println(intToRoman(10));         // should return X
     }
 
     // input : 1 <= num <= 3999
+    // 20ms runtime solution
     public static String intToRoman(int num) {
         Map<Integer, Character> mapIntToRoman = Map.of(
             1, 'I',
@@ -28,22 +27,22 @@ public class problem0012 {
         numCheckList.add(100);
         numCheckList.add(500);
         numCheckList.add(1000);
-        //Arrays.asList(1, 5, 10, 50, 100, 500, 1000);
         String romanNum = "";
         int multiplier = 1;
 
         while (num > 0) {
             int lastDigit = num % 10;
             int remainder = lastDigit % 5;
+            int count = 0;
             switch (remainder) {
                 case 4:
                     for(int i = 0; i < numCheckList.size(); i++) {
                         if (lastDigit * multiplier > numCheckList.get(i)) {
-                            // i++;
+                            count++;
                         } else {
-                            char firstChar = mapIntToRoman.get(numCheckList.get(i-2));
-                            char secondChar = mapIntToRoman.get(numCheckList.get(i-1));
-                            romanNum = firstChar + "" + secondChar + "" + romanNum;
+                            char firstChar = mapIntToRoman.get(numCheckList.get(i-count));
+                            char secondChar = mapIntToRoman.get(numCheckList.get(i));
+                            romanNum = firstChar + secondChar + romanNum;
                             break;
                         }
                     }
@@ -52,20 +51,26 @@ public class problem0012 {
                         numCheckList.remove(0);
                     }
                     num /= 10;
+                    count = 0;
                     break;
                 case 0:
+                    if (lastDigit == 5) {
+                        romanNum = mapIntToRoman.get(numCheckList.get(1)) + romanNum;
+                    }
                     multiplier *= 10;
                     num /= 10;
                     if (numCheckList.size() > 2) {
-                        numCheckList.remove(0);
-                        numCheckList.remove(1);
+                        for(int i = 0; i < 2; i++) {
+                            numCheckList.remove(0);
+                        }
                     }
                     break;
                 default:
-                    int count = 0;
                     for(int i = 0; i < numCheckList.size(); i++) {
-                        if (lastDigit * multiplier < numCheckList.get(i)) {
+                        if (lastDigit * multiplier > numCheckList.get(i)) {
                             count++;
+                        } else {
+                            break;
                         }
                     }
                     for(int j = 0; j < remainder; j++) {
@@ -75,10 +80,13 @@ public class problem0012 {
                         romanNum = mapIntToRoman.get(numCheckList.get(1)) + romanNum;
                     }
                     if (numCheckList.size() > 2) {
+                       for(int i = 0; i < 2; i++) {
                         numCheckList.remove(0);
-                        numCheckList.remove(1);
+                       }
                     }
                     num /= 10;
+                    multiplier *= 10;
+                    count = 0;
                     break;
             }
 
