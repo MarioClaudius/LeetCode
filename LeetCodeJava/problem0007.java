@@ -1,3 +1,5 @@
+package LeetCodeJava;
+
 public class problem0007 {
     public static void main(String[] args) {
         System.out.println(reverse(123));           // should return 321

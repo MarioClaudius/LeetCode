@@ -1,3 +1,5 @@
+package LeetCodeJava;
+
 public class problem0008 {
     public static void main(String[] args) {
         System.out.println(myAtoi("words and 987"));    // should return 0

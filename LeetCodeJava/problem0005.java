@@ -1,3 +1,5 @@
+package LeetCodeJava;
+
 public class problem0005 {
     public static void main(String[] args) {
         System.out.println(longestPalindrome("babad")); // should print bab / aba

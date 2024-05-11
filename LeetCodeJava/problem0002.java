@@ -1,3 +1,5 @@
+package LeetCodeJava;
+
 public class problem0002 {
     public static class ListNode {
         int val;
