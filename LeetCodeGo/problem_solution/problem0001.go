@@ -1,6 +1,6 @@
-package main
+package problemsolution
 
-func twoSum(nums []int, target int) []int {
+func TwoSum(nums []int, target int) []int {
 	result := make([]int, 2)
 	for i := 0; i < len(nums); i++ {
 		firstNum := nums[i]
