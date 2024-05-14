@@ -1,7 +1,43 @@
 package problemsolution
 
-// TIME LIMIT EXCEEDED SOLUTION, USING NORMAL LOOP (308/313 test case passed)
+import (
+	"sort"
+)
+
+// ACCEPTED SOLUTION USING 2 POINTER
 func ThreeSum(nums []int) [][]int {
+	// sort the array first
+	sort.Ints(nums)
+	result := make([][]int, 0)
+	for index, value := range nums {
+		if index > 0 && nums[index] == nums[index-1] {
+			continue
+		}
+		target := -1 * value
+		leftIndex := index + 1
+		rightIndex := len(nums) - 1
+		for leftIndex < rightIndex {
+			if nums[leftIndex]+nums[rightIndex] == target {
+				solution := []int{nums[index], nums[leftIndex], nums[rightIndex]}
+				result = append(result, solution)
+				increment := 1
+				for leftIndex+increment < len(nums)-1 && nums[leftIndex+increment] == nums[leftIndex] {
+					increment++
+				}
+				leftIndex += increment
+			}
+			if nums[leftIndex]+nums[rightIndex] > target {
+				rightIndex--
+			} else {
+				leftIndex++
+			}
+		}
+	}
+	return result
+}
+
+// TIME LIMIT EXCEEDED SOLUTION, USING NORMAL LOOP (308/313 test case passed)
+func ThreeSum1(nums []int) [][]int {
 	result := make([][]int, 0)
 	if len(nums) == 3 {
 		sum := 0
