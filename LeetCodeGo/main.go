@@ -20,4 +20,7 @@ func main() {
 	fmt.Println(solution.ThreeSum(nums2)) // should print [[0,0,0]]
 	fmt.Println(solution.ThreeSum(nums3)) // should print [[-5,1,4],[-4,0,4],[-4,1,3],[-2,-2,4],[-2,1,1],[0,0,0]]
 	fmt.Println(solution.ThreeSum(nums4)) // should print [[-4,1,3],[-3,0,3],[-3,1,2],[-2,-1,3],[-2,0,2],[-2,1,1],[-1,-1,2],[-1,0,1]]
+
+	//*************************** Problem 17: Letter Combination of Phone Number ***************************
+	fmt.Println(solution.LetterCombinations("23"))
 }
