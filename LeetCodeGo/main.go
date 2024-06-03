@@ -24,6 +24,9 @@ func main() {
 	// //*************************** Problem 17: Letter Combination of Phone Number ***************************
 	// fmt.Println(solution.LetterCombinations("23"))
 
+	//*************************** Problem 78: Subsets ***************************
+	fmt.Println(solution.Subsets([]int{1, 2, 3}))
+
 	//*************************** Problem 746: Minimum Cost Climbing Stairs ***************************
-	fmt.Println(solution.MinCostClimbingStairs([]int{10, 15, 20}))
+	// fmt.Println(solution.MinCostClimbingStairs([]int{10, 15, 20}))
 }
