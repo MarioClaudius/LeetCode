@@ -35,4 +35,7 @@ func main() {
 
 	//*************************** Problem 746: Minimum Cost Climbing Stairs ***************************
 	fmt.Println(solution.MinCostClimbingStairs([]int{10, 15, 20}))
+
+	//*************************** Problem 1002: Find Common Characters ***************************
+	fmt.Println(solution.CommonChars([]string{"bella", "label", "roller"})) // should return ["e", "l", "l"]
 }
