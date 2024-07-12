@@ -36,6 +36,10 @@ func main() {
 	//*************************** Problem 746: Minimum Cost Climbing Stairs ***************************
 	fmt.Println(solution.MinCostClimbingStairs([]int{10, 15, 20}))
 
+	//*************************** Problem 994: Rotting Oranges ***************************
+	fmt.Println(solution.OrangesRotting([][]int{{2, 1, 1}, {1, 1, 0}, {0, 1, 1}}))
+	fmt.Println(solution.OrangesRotting([][]int{{2, 0, 1, 1, 1, 1, 1, 1, 1, 1}, {1, 0, 1, 0, 0, 0, 0, 0, 0, 1}, {1, 0, 1, 0, 1, 1, 1, 1, 0, 1}, {1, 0, 1, 0, 1, 0, 0, 1, 0, 1}, {1, 0, 1, 0, 1, 0, 0, 1, 0, 1}, {1, 0, 1, 0, 1, 1, 0, 1, 0, 1}, {1, 0, 1, 0, 0, 0, 0, 1, 0, 1}, {1, 0, 1, 1, 1, 1, 1, 1, 0, 1}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 1}, {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}}))
+
 	//*************************** Problem 1002: Find Common Characters ***************************
 	fmt.Println(solution.CommonChars([]string{"bella", "label", "roller"})) // should return ["e", "l", "l"]
 }
