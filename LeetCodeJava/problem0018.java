@@ -32,7 +32,9 @@ public class problem0018 {
             currentList.add(nums[i]);
             sum3IndexNums += nums[i];
             indexCombination3Nums.add(i);
+            
             if (currentList.size() == maxListCount) {
+                sum3IndexNumsMap.put(String.format("%d:%d:%d", indexCombination3Nums.get(0), indexCombination3Nums.get(1), indexCombination3Nums.get(2)), sum3IndexNums);
                 if (nums[i] == target) {
                     List<Integer> copy = new ArrayList<>(currentList);
                     Collections.sort(copy);
