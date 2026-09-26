@@ -1,6 +1,7 @@
 package LeetCodeJava;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class problem0062 {
     public static void main(String[] args) {
@@ -56,5 +57,28 @@ public class problem0062 {
 
         backtrackTotalUniquePathMap.put(String.format("%d:%d", x, y), totalUniquePaths);
         return totalUniquePaths;
+    }
+
+    public static int uniquePath3(int m, int n) {
+        Map<String, Integer> uniquePathCountMap = new HashMap<>();
+        return backtrack2(0, 0, m, n, uniquePathCountMap);
+    }
+
+    public static int backtrack2(int x, int y, int m, int n, Map<String, Integer> uniquePathCountMap) {
+        String mapKey = String.format("%d_%d", x, y);
+        if (uniquePathCountMap.get(mapKey) != null) {
+            return uniquePathCountMap.get(mapKey);
+        }
+        if (x == m - 1 && y == n - 1) {
+            return 1;
+        }
+        if (x > m - 1 || y > n - 1) {
+            return 0;
+        }
+
+        int currentCoordinateUniquePathCount = backtrack2(x+1, y, m, n, uniquePathCountMap) + backtrack2(x, y+1, m, n, uniquePathCountMap);
+        uniquePathCountMap.put(mapKey, currentCoordinateUniquePathCount);
+
+        return currentCoordinateUniquePathCount;
     }
 }
