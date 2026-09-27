@@ -1,6 +1,7 @@
 package LeetCodeJava;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class problem0055 {
     public static void main(String[] args) {
@@ -62,6 +63,31 @@ public class problem0055 {
            }
         }
 
+        return false;
+    }
+
+    // another backtrack approach
+    public static boolean canJump3(int[] nums) {
+        Map<Integer, Boolean> canJumpMap = new HashMap<>();
+        return backtrack(0, nums, canJumpMap);
+    }
+
+    public static boolean backtrack(int currentIndex, int[] nums, Map<Integer, Boolean> canJumpMap) {
+        if (canJumpMap.get(currentIndex) != null) {
+            return canJumpMap.get(currentIndex);
+        }
+        int maxJump = nums[currentIndex];
+        if (currentIndex + maxJump >= nums.length-1) {
+            canJumpMap.put(currentIndex, true);
+            return true;
+        }
+        for(int i = maxJump; i > 0; i--) {
+            if(backtrack(currentIndex+i, nums, canJumpMap)) {
+                canJumpMap.put(currentIndex, true);
+                return true;
+            }
+        }
+        canJumpMap.put(currentIndex, false);
         return false;
     }
 }
