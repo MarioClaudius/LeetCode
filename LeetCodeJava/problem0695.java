@@ -1,6 +1,7 @@
 package LeetCodeJava;
 
 public class problem0695 {
+    // Max Area of Island
     public static void main(String[] args) {
         System.out.println(maxAreaOfIsland(new int[][]{
             {0,0,1,0,0,0,0,1,0,0,0,0,0},
